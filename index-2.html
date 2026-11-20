@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Biz Connect — read stories, share ideas and create with AI.">
+<title>Biz Connect — Stories, Ideas & AI Creativity</title>
+<style>
+:root{--bg:#0d1020;--panel:#171b30;--panel2:#202640;--ink:#f5f3ff;--muted:#a8aec5;--purple:#a78bfa;--pink:#f472b6;--cyan:#67e8f9;--line:#303653;--green:#6ee7b7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+header{height:76px;position:sticky;top:0;z-index:20;background:#0d1020ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-size:1.45rem;font-weight:900;letter-spacing:-1px;color:white;text-decoration:none}.logo span{color:var(--purple)}.navlinks{display:flex;gap:24px}.navlinks a{color:var(--muted);font-size:.91rem;text-decoration:none}.navlinks a:hover{color:white}.btn{border:0;border-radius:11px;padding:11px 17px;background:linear-gradient(120deg,#8b5cf6,#d946ef);color:white;font-weight:750}.btn.secondary{background:var(--panel2);border:1px solid var(--line)}.btn.small{padding:8px 12px;font-size:.85rem}.menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{padding:78px 0 66px;background:radial-gradient(ellipse at 80% 10%,#583c9560,transparent 38%),radial-gradient(ellipse at 5% 90%,#1b7b8c35,transparent 34%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.pill{display:inline-flex;padding:6px 12px;border-radius:30px;background:#a78bfa20;color:#d7c7ff;border:1px solid #a78bfa50;font-size:.82rem;font-weight:700}.hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.03;letter-spacing:-3px;margin:19px 0}.gradient{background:linear-gradient(100deg,#c4b5fd,#f9a8d4,#67e8f9);background-clip:text;color:transparent}.hero p{max-width:570px;color:var(--muted);font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0}.hero-note{color:#9299b3;font-size:.85rem}.showcase{background:linear-gradient(145deg,#242947,#151a2e);border:1px solid #414768;border-radius:24px;padding:22px;box-shadow:0 25px 70px #0006;transform:rotate(1deg)}.showcase-head{display:flex;justify-content:space-between;color:#d7d9e8;font-size:.9rem;margin-bottom:15px}.cover-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cover{min-height:190px;border-radius:15px;padding:15px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080a18e8,transparent 80%)}.cover>*{position:relative}.cover.one{background:linear-gradient(135deg,#5a2b63,#d17a8c 48%,#271c45)}.cover.two{background:linear-gradient(135deg,#122b45,#36828a 50%,#11172b)}.cover.three{background:linear-gradient(135deg,#38224e,#b65c85 55%,#1a1a38)}.cover.four{background:linear-gradient(135deg,#45331f,#bd9b56 55%,#1a2034)}.cover b{font-size:1.05rem}.cover small{color:#e1ddec}.showcase-foot{display:flex;justify-content:space-between;margin-top:15px;color:#b7bdd2;font-size:.82rem}
+section{padding:70px 0}.section-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.section-top h2{font-size:clamp(1.8rem,3vw,2.55rem);letter-spacing:-1px;margin:0}.section-top p{color:var(--muted);margin:5px 0 0}.muted{color:var(--muted)}.stories{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.story-card{background:var(--panel);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s}.story-card:hover{transform:translateY(-5px);border-color:#7160a8}.story-art{height:190px;padding:16px;display:flex;align-items:end;background:linear-gradient(140deg,#522e67,#e08a9e 50%,#1e1c3d)}.story-art.a2{background:linear-gradient(140deg,#12334b,#4c9b9b,#111a35)}.story-art.a3{background:linear-gradient(140deg,#3c244b,#aa668c,#18213c)}.story-art.a4{background:linear-gradient(140deg,#45301d,#c69d57,#171d32)}.story-art span{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:#080a18a8;padding:5px 9px;border-radius:20px}.story-info{padding:16px}.story-info h3{margin:0 0 5px}.story-info p{margin:0 0 13px;color:var(--muted);font-size:.88rem}.meta{display:flex;justify-content:space-between;color:#9299b3;font-size:.78rem}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.feature{padding:23px;background:var(--panel);border:1px solid var(--line);border-radius:17px}.feature .emoji{font-size:1.7rem}.feature h3{margin:10px 0 5px}.feature p{color:var(--muted);font-size:.92rem;margin:0}
+.community{background:#12172a}.community-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.box h3{margin:0 0 14px}.field{width:100%;padding:12px 14px;background:#101529;color:white;border:1px solid #3a4262;border-radius:10px;margin:0 0 11px;resize:vertical}.field:focus{outline:2px solid #8b5cf6}.post{border-top:1px solid var(--line);padding:15px 0}.post:first-of-type{border-top:0}.post-head{display:flex;justify-content:space-between;color:#d9d8e9;font-weight:700}.post p{color:var(--muted);margin:7px 0}.post small{color:#8992ad}.tag{display:inline-block;background:#292544;color:#c9b8ff;padding:4px 8px;border-radius:20px;font-size:.72rem}
+.tools-section{background:linear-gradient(180deg,#0d1020,#17152b)}.tool-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:9px 14px;border-radius:10px}.tab.active{background:#6d4ac5;color:white;border-color:#9b7be9}.tool-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.output{min-height:310px;background:#0b1020;border:1px solid #343b5a;border-radius:13px;padding:17px;white-space:pre-wrap;color:#d9d7ec;font-size:.92rem}.output-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.output-title b{font-size:.9rem}.hint{color:#8e97b4;font-size:.83rem}.tool-label{display:block;font-size:.85rem;color:#d7d9e8;margin:7px 0}.output-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.assistant{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px}.assistant-intro{padding:25px;border-radius:18px;background:linear-gradient(145deg,#37265e,#1d2440);border:1px solid #55417f}.assistant-intro h3{font-size:1.5rem;margin:10px 0}.chat{background:var(--panel);border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;min-height:360px}.chatlog{padding:18px;flex:1;max-height:330px;overflow:auto}.bubble{padding:11px 14px;border-radius:13px;margin:0 0 11px;max-width:90%;font-size:.9rem}.bot{background:#292545;color:#e7defe}.user{background:#263e5a;margin-left:auto;color:#e5f7ff}.chatbar{display:flex;gap:8px;padding:13px;border-top:1px solid var(--line)}.chatbar input{flex:1;min-width:0;background:#101529;color:white;border:1px solid #3a4262;border-radius:10px;padding:11px}.chatbar button{white-space:nowrap}
+.cta{padding:55px 0;text-align:center;background:radial-gradient(ellipse at center,#45306e 0,transparent 65%)}.cta h2{font-size:2.4rem;margin:0 0 8px}.cta p{color:var(--muted);margin:0 0 20px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#9299b3;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.notice{font-size:.78rem;color:#8c95b0;margin-top:14px}
+@media(max-width:850px){.hero-grid,.community-grid,.tool-layout,.assistant{grid-template-columns:1fr}.stories{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#14182a;padding:18px;flex-direction:column}.navlinks.open{display:flex}.menu{display:block}.nav>.btn{display:none}}
+@media(max-width:540px){.stories,.feature-grid{grid-template-columns:1fr 1fr}.story-art{height:150px}.story-info{padding:12px}.story-info h3{font-size:1rem}.hero{padding:55px 0}.hero h1{letter-spacing:-1.8px}.cover{min-height:150px}.section-top{align-items:start;flex-direction:column}.wrap{width:calc(100% - 28px)}}
+</style></head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#">biz<span>connect</span>.</a><nav class="navlinks" id="navlinks"><a href="#stories">Read stories</a><a href="#community">Community</a><a href="#publish">Publish a story</a><a href="#assistant">AI assistant</a><a href="#studio">Prompt studio</a></nav><a class="btn small" href="#studio">Start creating</a><button class="menu" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">☰</button></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><span class="pill">✦ READ · IMAGINE · CREATE</span><h1>Every great story begins with <span class="gradient">an idea.</span></h1><p>Read original stories, share the worlds in your imagination and use AI to bring your ideas to life. Your next chapter starts at Biz Connect.</p><div class="actions"><a class="btn" href="#stories">Explore stories ↗</a><a class="btn secondary" href="#studio">Create with AI</a></div><div class="hero-note">A creative home for readers, writers and future filmmakers.</div></div><div class="showcase"><div class="showcase-head"><b>✦ Discover your next read</b><span>Featured shelf</span></div><div class="cover-grid"><div class="cover one"><b>AJE</b><small>Wealth · Drama</small></div><div class="cover two"><b>A Second Chance</b><small>Love · Redemption</small></div><div class="cover three"><b>Love Deceit</b><small>Romance · Suspense</small></div><div class="cover four"><b>The Beast Academy</b><small>Fantasy · Adventure</small></div></div><div class="showcase-foot"><span>Stories worth getting lost in.</span><span>✧ 4 featured reads</span></div></div></div></section>
+
+<section id="stories"><div class="wrap"><div class="section-top"><div><span class="pill">THE LIBRARY</span><h2>Stories to fall into</h2><p>Discover original fiction from the Biz Connect founder and our community of writers.</p></div><span class="muted">Founder picks · Community authors</span></div><div class="stories">
+<article class="story-card"><div class="story-art"><span>Drama · Wealth</span></div><div class="story-info"><h3>Aje (Wealth)</h3><p>An orphan's life takes an unexpected turn when kindness opens a door she never imagined.</p><div class="meta"><span>By Biz Connect</span><span>♡ 1.2k</span></div><button class="btn small" style="margin-top:13px" onclick="readStory('Aje (Wealth)')">Read story</button></div></article>
+<article class="story-card"><div class="story-art a2"><span>Romance · Drama</span></div><div class="story-info"><h3>A Second Chance</h3><p>Can two people find their way back to a love they thought they had lost?</p><div class="meta"><span>By Biz Connect</span><span>♡ 846</span></div><button class="btn small" style="margin-top:13px" onclick="readStory('A Second Chance')">Read story</button></div></article>
+<article class="story-card"><div class="story-art a3"><span>Romance · Suspense</span></div><div class="story-info"><h3>Love Deceit</h3><p>Behind a perfect romance lies a secret that could change everything.</p><div class="meta"><span>By Biz Connect</span><span>♡ 692</span></div><button class="btn small" style="margin-top:13px" onclick="readStory('Love Deceit')">Read story</button></div></article>
+<article class="story-card"><div class="story-art a4"><span>Fantasy · Adventure</span></div><div class="story-info"><h3>The Beast Academy</h3><p>In a kingdom ruled by power, one girl discovers that being different may be her greatest strength.</p><div class="meta"><span>By Biz Connect</span><span>♡ 1.4k</span></div><button class="btn small" style="margin-top:13px" onclick="readStory('The Beast Academy')">Read story</button></div></article>
+</div><p class="notice">The titles above are sample featured listings. Add your complete chapters, author profiles and reading progress when the full publishing system is connected.</p></div></section>
+
+
+<section id="publish"><div class="wrap">
+<div class="section-top"><div><span class="pill">YOUR AUTHOR SPACE</span><h2>Every writer deserves a place to be heard</h2><p>Publish your own stories, build an audience and share your imagination with the Biz Connect community.</p></div></div>
+<div class="feature-grid">
+<div class="feature"><div class="emoji">👑</div><h3>Founder featured shelf</h3><p>Your original stories appear in a special founder collection, giving your work a prominent place on the homepage.</p></div>
+<div class="feature"><div class="emoji">✍️</div><h3>Community authors</h3><p>Registered writers can create author profiles, publish stories and add chapters to their own collections.</p></div>
+<div class="feature"><div class="emoji">📚</div><h3>Readers & followers</h3><p>Readers can discover authors, follow their work, bookmark stories and leave thoughtful comments.</p></div>
+</div>
+<div class="community-grid" style="margin-top:22px">
+<div class="box"><h3>📖 Publish a story</h3><p class="muted">Share a title and short introduction. This demo adds your story to the page locally.</p>
+<form id="storyform">
+<input class="field" id="storytitle" placeholder="Story title" required>
+<input class="field" id="authorname" placeholder="Author name" required>
+<select class="field" id="storygenre"><option>Romance</option><option>Drama</option><option>Fantasy</option><option>Thriller / Suspense</option><option>Comedy</option><option>Inspirational</option><option>Other</option></select>
+<textarea class="field" id="storysummary" rows="4" placeholder="Write a short story description..." required></textarea>
+<button class="btn" type="submit">Publish story preview</button>
+</form>
+<p class="notice">A live publishing system will need writer accounts, chapter editor, moderation and database storage.</p>
+</div>
+<div class="box"><h3>🌟 Publishing guidelines</h3>
+<div class="post"><b>1. Publish original work</b><p>Only post stories you created or have permission to share.</p></div>
+<div class="post"><b>2. Respect the community</b><p>Give constructive feedback and respect other writers' work.</p></div>
+<div class="post"><b>3. Use AI as a creative partner</b><p>AI can help with ideas and prompts, but writers remain responsible for what they publish.</p></div>
+<div class="post"><b>4. Keep readers safe</b><p>Clear content labels and community moderation help make the platform welcoming.</p></div>
+</div></div>
+<div class="box" style="margin-top:18px"><h3>🆕 Community story submissions</h3><div id="newstories" class="muted">New story previews submitted through this demo will appear here.</div></div>
+</div></section>
+<section class="community" id="community"><div class="wrap"><div class="section-top"><div><span class="pill">THE WRITERS' ROOM</span><h2>Ideas grow when shared</h2><p>Share a plot idea, ask for feedback or find your next creative partner.</p></div></div><div class="community-grid"><div class="box"><h3>💬 Community ideas</h3><div id="posts"><div class="post"><div class="post-head"><span>AmaraWrites</span><span class="tag">Plot idea</span></div><p>What if a woman receives letters from someone who claims to be her future daughter?</p><small>12 replies · 2 hours ago</small></div><div class="post"><div class="post-head"><span>KelvinCreates</span><span class="tag">Question</span></div><p>How do you keep a character's face consistent across AI-generated scenes?</p><small>8 replies · Yesterday</small></div></div></div><div class="box"><h3>✍️ Share your idea</h3><form id="postform"><input class="field" id="postname" placeholder="Your display name" required><select class="field" id="posttype"><option>Plot idea</option><option>Writing question</option><option>Collaboration</option><option>Feedback request</option></select><textarea class="field" id="posttext" rows="5" placeholder="Tell the community what's on your mind..." required></textarea><button class="btn" type="submit">Share with community</button></form><p class="notice" id="postnotice">Demo posts appear on this page only; a live community needs member accounts and a database.</p></div></div></div></section>
+
+<section id="assistant"><div class="wrap"><div class="section-top"><div><span class="pill">YOUR CREATIVE PARTNER</span><h2>Meet the Biz Connect AI assistant</h2><p>Ask for help with story structure, characters, dialogue, prompts and video planning.</p></div></div><div class="assistant"><div class="assistant-intro"><div style="font-size:2rem">✧</div><h3>Not sure how to bring your idea to life?</h3><p class="muted">Ask questions in everyday language. The assistant can help you shape a rough thought into a clearer creative direction.</p><p>Try asking:</p><ul class="muted"><li>Help me develop a romance plot.</li><li>How can I keep my character consistent?</li><li>Turn this scene into a video prompt.</li><li>How do I write dialogue naturally?</li></ul></div><div class="chat"><div class="chatlog" id="chatlog"><div class="bubble bot">Hello, creator! ✨ I'm the Biz Connect AI assistant. Tell me what you're writing or creating, and I'll help you take the next step.</div></div><div class="chatbar"><input id="chatinput" placeholder="Ask your creative question..." onkeydown="if(event.key==='Enter')sendChat()"><button class="btn" onclick="sendChat()">Send</button></div></div></div><p class="notice">AI assistant connected through a secure Biz Connect backend. Please do not enter passwords, payment details or other sensitive personal information.</p></div></section>
+
+<section class="tools-section" id="studio"><div class="wrap"><div class="section-top"><div><span class="pill">AI CREATION STUDIO</span><h2>Turn your imagination into prompts</h2><p>Build a starting prompt for images, scenes or AI-generated videos.</p></div></div><div class="tool-tabs"><button class="tab active" onclick="setMode('character',this)">Character prompt</button><button class="tab" onclick="setMode('image',this)">Scene / image prompt</button><button class="tab" onclick="setMode('video',this)">Video scene prompt</button><button class="tab" onclick="setMode('story',this)">Story idea builder</button></div><div class="tool-layout"><div class="box"><h3 id="formtitle">Create a consistent character</h3><label class="tool-label">Your story or scene idea</label><textarea class="field" id="idea" rows="4" placeholder="Example: A young Nigerian woman returns to her hometown after ten years..."></textarea><label class="tool-label">Character / subject</label><input class="field" id="subject" placeholder="e.g. Aje, a 23-year-old woman"><label class="tool-label">Visual style</label><select class="field" id="style"><option>Cinematic photorealistic</option><option>Realistic 3D animation</option><option>Anime-inspired realism</option><option>Illustrated storybook</option><option>Documentary realism</option></select><label class="tool-label">Mood</label><select class="field" id="mood"><option>Emotional and dramatic</option><option>Romantic and warm</option><option>Mysterious and suspenseful</option><option>Joyful and playful</option><option>Dark and atmospheric</option></select><button class="btn" onclick="generatePrompt()">Generate my prompt ✨</button></div><div class="box"><div class="output-title"><b id="outputtitle">Your ready-to-use prompt</b><span class="tag">Prompt preview</span></div><div class="output" id="promptoutput">Your generated prompt will appear here.
+
+Tip: Describe the character's age, skin tone, hairstyle, clothing and distinctive features. Reuse the same character description in every scene to improve visual consistency.</div><div class="output-actions"><button class="btn small" onclick="copyPrompt()">Copy prompt</button><button class="btn small secondary" onclick="useForChat()">Ask AI assistant about this</button></div><p class="notice">Use the prompt in an image or video generation tool you have access to. Different tools support different prompt formats and reference-image features.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="section-top"><div><span class="pill">CREATE YOUR WAY</span><h2>Tools to explore</h2><p>Biz Connect can guide creators towards tools for each stage of production.</p></div></div><div class="feature-grid"><div class="feature"><div class="emoji">🖼️</div><h3>AI image generation</h3><p>Create character portraits, locations, book covers and story illustrations.</p></div><div class="feature"><div class="emoji">🎬</div><h3>AI video generation</h3><p>Turn scene descriptions into short clips, motion shots and visual sequences.</p></div><div class="feature"><div class="emoji">🎙️</div><h3>Voice & narration</h3><p>Plan narration, character dialogue and voice-over for your story videos.</p></div><div class="feature"><div class="emoji">🧩</div><h3>Character consistency</h3><p>Build reusable character descriptions and reference-image workflows.</p></div><div class="feature"><div class="emoji">📝</div><h3>Script & storyboard</h3><p>Break a chapter into scenes, camera directions and dialogue.</p></div><div class="feature"><div class="emoji">✂️</div><h3>Editing & publishing</h3><p>Plan captions, episode structure, subtitles and social media releases.</p></div></div></div></section>
+<section class="cta"><div class="wrap"><h2>Your imagination belongs here.</h2><p>Read something inspiring. Share an idea. Create something original.</p><a class="btn" href="#community">Join the creative community →</a></div></section>
+</main><footer><div class="wrap foot"><div><a class="logo" href="#">biz<span>connect</span>.</a><div>Where stories meet imagination.</div></div><div>Read · Write · Connect · Create with AI</div></div><div class="wrap notice">© 2026 Biz Connect. AI writing and prompt assistance are available; accounts, permanent publishing and cloud story storage are coming next.</div></footer>
+
+<script>
+let currentMode='character';
+function readStory(title){alert(title+'\\n\\nThis is a preview of the reading experience. Your full chapters and reader features can be added to the live story library.');}
+
+document.getElementById('storyform').addEventListener('submit',function(e){
+ e.preventDefault();
+ const title=document.getElementById('storytitle').value.trim();
+ const author=document.getElementById('authorname').value.trim();
+ const genre=document.getElementById('storygenre').value;
+ const summary=document.getElementById('storysummary').value.trim();
+ const card=document.createElement('div');card.className='post';
+ const head=document.createElement('div');head.className='post-head';
+ const name=document.createElement('span');name.textContent=title+' — '+author;
+ const tag=document.createElement('span');tag.className='tag';tag.textContent=genre;
+ head.append(name,tag);
+ const p=document.createElement('p');p.textContent=summary;
+ const small=document.createElement('small');small.textContent='Community author · Demo submission';
+ card.append(head,p,small);
+ const container=document.getElementById('newstories');
+ if(container.textContent.includes('New story previews'))container.textContent='';
+ container.prepend(card);this.reset();
+});
+
+document.getElementById('postform').addEventListener('submit',function(e){e.preventDefault();let name=document.getElementById('postname').value.trim(),type=document.getElementById('posttype').value,body=document.getElementById('posttext').value.trim();let el=document.createElement('div');el.className='post';let h=document.createElement('div');h.className='post-head';let n=document.createElement('span');n.textContent=name;let t=document.createElement('span');t.className='tag';t.textContent=type;h.append(n,t);let p=document.createElement('p');p.textContent=body;let sm=document.createElement('small');sm.textContent='Just now · Demo post';el.append(h,p,sm);document.getElementById('posts').prepend(el);this.reset();});
+function addBubble(text,who){let d=document.createElement('div');d.className='bubble '+who;d.textContent=text;let log=document.getElementById('chatlog');log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+async function sendChat(){
+ const input=document.getElementById('chatinput');
+ const q=input.value.trim();
+ if(!q)return;
+ if(q.length>8000){addBubble('Please keep each message under 8,000 characters.','bot');return;}
+ addBubble(q,'user');
+ input.value='';
+ const sendButton=document.querySelector('.chatbar button');
+ const oldLabel=sendButton.textContent;
+ sendButton.disabled=true;
+ sendButton.textContent='Thinking…';
+ const pending=addBubble('Biz Connect AI is thinking…','bot');
+ try{
+  const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.error||'The AI request could not be completed.');
+  pending.textContent=data.reply||'I could not create a response. Please try again.';
+ }catch(error){
+  pending.textContent=error.message||'Sorry, something went wrong. Please try again shortly.';
+ }finally{
+  sendButton.disabled=false;
+  sendButton.textContent=oldLabel;
+ }
+}
+function setMode(mode,btn){currentMode=mode;document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');let titles={character:'Create a consistent character',image:'Describe a cinematic scene',video:'Plan an AI video scene',story:'Develop your story idea'};document.getElementById('formtitle').textContent=titles[mode];document.getElementById('subject').placeholder=mode==='character'?'e.g. Aje, a 23-year-old woman':mode==='story'?'e.g. A young woman hiding a secret':'e.g. Aje and Femi';}
+async function generatePrompt(){
+ const idea=document.getElementById('idea').value.trim()||'A meaningful moment in an original story';
+ const subject=document.getElementById('subject').value.trim()||'the main character';
+ const style=document.getElementById('style').value;
+ const mood=document.getElementById('mood').value;
+ const output=document.getElementById('promptoutput');
+ const button=document.querySelector('button[onclick="generatePrompt()"]');
+ const oldLabel=button.textContent;
+ button.disabled=true;
+ button.textContent='Creating with AI…';
+ output.textContent='Biz Connect AI is creating your prompt…';
+ try{
+  const response=await fetch('/api/prompt',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:currentMode,idea,subject,style,mood})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.error||'The prompt could not be generated.');
+  output.textContent=data.prompt||'No prompt was returned. Please try again.';
+ }catch(error){
+  output.textContent=(error.message||'Something went wrong.')+'\\n\\nPlease try again in a moment.';
+ }finally{
+  button.disabled=false;
+  button.textContent=oldLabel;
+ }
+}
+function copyPrompt(){let t=document.getElementById('promptoutput').textContent;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>alert('Prompt copied!')).catch(()=>alert('Select and copy the prompt manually.'));}else alert('Select and copy the prompt manually.');}
+function useForChat(){let t=document.getElementById('promptoutput').textContent;document.getElementById('chatinput').value='Please improve this prompt and explain how I can use it: '+t.slice(0,450);document.getElementById('chatinput').focus();document.getElementById('assistant').scrollIntoView({behavior:'smooth'});}
+</script></body></html>
